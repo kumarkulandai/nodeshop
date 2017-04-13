@@ -1,9 +1,12 @@
 var express = require('express');
 var app = express();
+var path = require('path');
 var expressHbs = require('express3-handlebars');
 
 app.engine('hbs', expressHbs({extname:'hbs', defaultLayout:'main.hbs'}));
 app.set('view engine', 'hbs');
+
+
 
 app.get('/', function(req, res){
   res.render('index');
@@ -57,5 +60,7 @@ app.get('/logic', function(req, res){
 
   res.render('logic', data);
 });
+
+app.use('/media', express.static(path.join(__dirname, '/media')));
 
 app.listen(4000);

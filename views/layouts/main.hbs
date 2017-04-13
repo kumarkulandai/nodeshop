@@ -1,36 +1,34 @@
 <html>
 <head>
-<title>Chill Boutique</title>
+<title>Zivame - Node Express </title>
+<style>
+  .trheader{
+    background-color: #f2f2f2;
+    text-align: center;
+  }
+  .trbody{
+    background-color: #a1a1a1;
+    text-align: left;
+  }
+  .trfooter{
+    background-color: #c6c6c6;
+    text-align: center;
+  }
+</style>
 </head>
 <body>
-<span> Main HBS load starts</span>
-<hr/>
-<h3>Examples:</h3>
-<ul>
-<li><a href='/simple'>Simple variable display</a></li>
-<li><a href='/complex'>Complex object display</a></li>
-<li><a href='/loop'>Using loops with '&#123;&#123;#each&#125;&#125;'</a></li>
-<li><a href='/logic'>Logic in your templates with '&#123;&#123;#if&#125;&#125;'</a></li>
-</ul>
-<hr/>
-some value on main hbs
-<hr/>
-before some value
-<hr/>
-{{someValue}}
-<hr/>
-<br>after some value
-<hr/>
-<br>before body
-<hr/>
-{{{body}}}
-<hr/>
-<br>after body
-<hr/>
-<br>
-<hr/>
-<span> Main HBS load end</span>
-<hr/>
+<table width="100%" height = "100%">
+    <tr class="trheader" height="15%">
+        <td colspan=2>{{> header }}</td>
+    <tr>
+    <tr class="trbody" height="70%">
+        <td>{{> menu }}</td>
+        <td>{{{body}}}</td>
+    </tr>
+    <tr class="trfooter" height="15%">
+        <td colspan=2>{{> footer }}</td>
+    </tr>
+</table>
 </body>
-<hr/>
+
 </html>
