@@ -1,0 +1,16 @@
+{
+  "name": "nodeexpress",
+  "version": "1.0.0",
+  "description": "Node Express Project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "author": "kumar kulandai",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.15.2",
+    "express3-handlebars": "^0.5.2"
+  }
+}
