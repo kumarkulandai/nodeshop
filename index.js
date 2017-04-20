@@ -6,61 +6,148 @@ var expressHbs = require('express3-handlebars');
 app.engine('hbs', expressHbs({extname:'hbs', defaultLayout:'main.hbs'}));
 app.set('view engine', 'hbs');
 
-
+app.use('/media', express.static(path.join(__dirname, '/media')));
 
 app.get('/', function(req, res){
-  res.render('index');
+  res.render('home');
 });
 
-app.get('/simple', function(req, res){
-  var data = {name: 'Gorilla'};
-  res.render('simple', data);
-});
-
-app.get('/complex', function(req, res){
-  var data = {
-    name: 'Gorilla',
-    address: {
-      streetName: 'Broadway',
-      streetNumber: '721',
-      floor: 4,
-      addressType: {
-        typeName: 'residential'
-      }
-    }
-  };
-  res.render('complex', data);
-});
-
-app.get('/loop', function(req, res){
-  var basketballPlayers = [
-    {name: 'Lebron James', team: 'the Heat'},
-    {name: 'Kevin Durant', team: 'the Thunder'},
-    {name: 'Kobe Jordan',  team: 'the Lakers'}
+app.get('/bra', function(req, res){
+  var products = [
+    {name: 'Blue Bra', price: '299',image : '/media/images/blackbra.jpg'},
+    {name: 'Red Bra', price: '299',image : '/media/images/whitebra.jpg'},
+    {name: 'Green Bra', price: '299',image : '/media/images/blackbra.jpg'},
+    {name: 'White Bra', price: '299',image : '/media/images/whitebra.jpg'},
+    {name: 'Yellow Bra', price: '299',image : '/media/images/blackbra.jpg'},
+    {name: 'Stapless Bra', price: '299',image : '/media/images/whitebra.jpg'},
+    {name: 'Wired Bra', price: '299',image : '/media/images/blackbra.jpg'},
+    {name: 'Non Wired Bra', price: '299',image : '/media/images/whitebra.jpg'},
+    {name: 'Plain Bra', price: '299',image : '/media/images/blackbra.jpg'},
+    {name: 'Cotton Bra', price: '299',image : '/media/images/whitebra.jpg'},
+    {name: 'Blue Bra', price: '299',image : '/media/images/blackbra.jpg'},
+    {name: 'Blue Bra', price: '299',image : '/media/images/whitebra.jpg'},
+    {name: 'Blue Bra', price: '299',image : '/media/images/blackbra.jpg'},
+    {name: 'Blue Bra', price: '299',image : '/media/images/whitebra.jpg'},
+    {name: 'Blue Bra', price: '299',image : '/media/images/blackbra.jpg'},
+    {name: 'Blue Bra', price: '299',image : '/media/images/whitebra.jpg'},
+    {name: 'Blue Bra', price: '299',image : '/media/images/blackbra.jpg'},
+    {name: 'Black Bra', price: '299',image : '/media/images/whitebra.jpg'}
   ];
 
-  var days = [
-    'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'
+  var sizes = [
+    'Small', 'Medium', 'Large'
   ];
 
   var data = {
-    basketballPlayers: basketballPlayers,
-    days: days
+    products: products,
+    sizes: sizes
   };
 
-  res.render('loop', data);
+  res.render('bra', data);
 });
 
-app.get('/logic', function(req, res){
+app.get('/panty', function(req, res){
+  var products = [
+    {name: 'Blue Bra', price: '299',image : '/media/images/blackbra.jpg'},
+    {name: 'Red Bra', price: '299',image : '/media/images/whitebra.jpg'},
+    {name: 'Green Bra', price: '299',image : '/media/images/blackbra.jpg'},
+    {name: 'White Bra', price: '299',image : '/media/images/whitebra.jpg'},
+    {name: 'Yellow Bra', price: '299',image : '/media/images/blackbra.jpg'},
+    {name: 'Stapless Bra', price: '299',image : '/media/images/whitebra.jpg'},
+    {name: 'Wired Bra', price: '299',image : '/media/images/blackbra.jpg'},
+    {name: 'Non Wired Bra', price: '299',image : '/media/images/whitebra.jpg'},
+    {name: 'Plain Bra', price: '299',image : '/media/images/blackbra.jpg'},
+    {name: 'Cotton Bra', price: '299',image : '/media/images/whitebra.jpg'},
+    {name: 'Blue Bra', price: '299',image : '/media/images/blackbra.jpg'},
+    {name: 'Blue Bra', price: '299',image : '/media/images/whitebra.jpg'},
+    {name: 'Blue Bra', price: '299',image : '/media/images/blackbra.jpg'},
+    {name: 'Blue Bra', price: '299',image : '/media/images/whitebra.jpg'},
+    {name: 'Blue Bra', price: '299',image : '/media/images/blackbra.jpg'},
+    {name: 'Blue Bra', price: '299',image : '/media/images/whitebra.jpg'},
+    {name: 'Blue Bra', price: '299',image : '/media/images/blackbra.jpg'},
+    {name: 'Black Bra', price: '299',image : '/media/images/whitebra.jpg'}
+  ];
+
+  var sizes = [
+    'Small', 'Medium', 'Large'
+  ];
+
   var data = {
-    upIsUp: true,
-    downIsUp: false,
-    skyIsBlue: "yes"
+    products: products,
+    sizes: sizes
   };
 
-  res.render('logic', data);
+  res.render('panty', data);
 });
 
-app.use('/media', express.static(path.join(__dirname, '/media')));
+app.get('/sets', function(req, res){
+  var products = [
+    {name: 'Blue Bra', price: '299',image : '/media/images/blackbra.jpg'},
+    {name: 'Red Bra', price: '299',image : '/media/images/whitebra.jpg'},
+    {name: 'Green Bra', price: '299',image : '/media/images/blackbra.jpg'},
+    {name: 'White Bra', price: '299',image : '/media/images/whitebra.jpg'},
+    {name: 'Yellow Bra', price: '299',image : '/media/images/blackbra.jpg'},
+    {name: 'Stapless Bra', price: '299',image : '/media/images/whitebra.jpg'},
+    {name: 'Wired Bra', price: '299',image : '/media/images/blackbra.jpg'},
+    {name: 'Non Wired Bra', price: '299',image : '/media/images/whitebra.jpg'},
+    {name: 'Plain Bra', price: '299',image : '/media/images/blackbra.jpg'},
+    {name: 'Cotton Bra', price: '299',image : '/media/images/whitebra.jpg'},
+    {name: 'Blue Bra', price: '299',image : '/media/images/blackbra.jpg'},
+    {name: 'Blue Bra', price: '299',image : '/media/images/whitebra.jpg'},
+    {name: 'Blue Bra', price: '299',image : '/media/images/blackbra.jpg'},
+    {name: 'Blue Bra', price: '299',image : '/media/images/whitebra.jpg'},
+    {name: 'Blue Bra', price: '299',image : '/media/images/blackbra.jpg'},
+    {name: 'Blue Bra', price: '299',image : '/media/images/whitebra.jpg'},
+    {name: 'Blue Bra', price: '299',image : '/media/images/blackbra.jpg'},
+    {name: 'Black Bra', price: '299',image : '/media/images/whitebra.jpg'}
+  ];
+
+  var sizes = [
+    'Small', 'Medium', 'Large'
+  ];
+
+  var data = {
+    products: products,
+    sizes: sizes
+  };
+
+  res.render('sets', data);
+});
+
+app.get('/bundle', function(req, res){
+  var products = [
+    {name: 'Blue Bra', price: '299',image : '/media/images/blackbra.jpg'},
+    {name: 'Red Bra', price: '299',image : '/media/images/whitebra.jpg'},
+    {name: 'Green Bra', price: '299',image : '/media/images/blackbra.jpg'},
+    {name: 'White Bra', price: '299',image : '/media/images/whitebra.jpg'},
+    {name: 'Yellow Bra', price: '299',image : '/media/images/blackbra.jpg'},
+    {name: 'Stapless Bra', price: '299',image : '/media/images/whitebra.jpg'},
+    {name: 'Wired Bra', price: '299',image : '/media/images/blackbra.jpg'},
+    {name: 'Non Wired Bra', price: '299',image : '/media/images/whitebra.jpg'},
+    {name: 'Plain Bra', price: '299',image : '/media/images/blackbra.jpg'},
+    {name: 'Cotton Bra', price: '299',image : '/media/images/whitebra.jpg'},
+    {name: 'Blue Bra', price: '299',image : '/media/images/blackbra.jpg'},
+    {name: 'Blue Bra', price: '299',image : '/media/images/whitebra.jpg'},
+    {name: 'Blue Bra', price: '299',image : '/media/images/blackbra.jpg'},
+    {name: 'Blue Bra', price: '299',image : '/media/images/whitebra.jpg'},
+    {name: 'Blue Bra', price: '299',image : '/media/images/blackbra.jpg'},
+    {name: 'Blue Bra', price: '299',image : '/media/images/whitebra.jpg'},
+    {name: 'Blue Bra', price: '299',image : '/media/images/blackbra.jpg'},
+    {name: 'Black Bra', price: '299',image : '/media/images/whitebra.jpg'}
+  ];
+
+  var sizes = [
+    'Small', 'Medium', 'Large'
+  ];
+
+  var data = {
+    products: products,
+    sizes: sizes
+  };
+
+  res.render('bundle', data);
+});
+
+
 
 app.listen(4000);

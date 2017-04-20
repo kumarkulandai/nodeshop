@@ -1,0 +1,21 @@
+<style>
+.product{
+  width:215px;
+  height: 300px;
+  float:left;
+  background-color:yellow;
+  margin: 10px;
+}
+img{
+  margin:25px;
+}
+</style>
+{{#each products}}
+   <div class="product">
+             <a class="product-title" href="#">{{this.name}}</a>
+             <div>Rs. {{this.price}}</div>
+             <a href="#">
+                 <img src="{{this.image}}" alt="{{this.name}}" width="158" height="200" />
+             </a>
+         </div>
+{{/each}}
